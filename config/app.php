@@ -170,7 +170,6 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Asvae\ApiTester\ServiceProvider::class,
         PrettyRoutes\ServiceProvider::class,
-        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 
         /*
          * Application Service Providers...

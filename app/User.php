@@ -48,7 +48,7 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
-    public function created()
+    public function lobby()
     {
         return $this->hasMany('App\Lobby', 'lobby_id');
     }

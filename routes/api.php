@@ -33,6 +33,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:api')->group(function (){
+    Route::post('create/lobby', 'LobbyController@createLobby')->name('api.create.lobby');
     Route::get('lobby/{lobby}', 'LobbyController@getLobby')->name('api.lobby');
     Route::get('lobbies', 'LobbyController@getLobbies')->name('api.lobbies');
     Route::post('join/public/lobby/{userId}/{lobbyId}', 'JoiningRequestController@joinPublicLobby')->name('api.public.join');

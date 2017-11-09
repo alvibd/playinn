@@ -66,4 +66,9 @@ class ApiController extends Controller
 
         return response()->json(['LobbyClass' => $lobby]);
     }
+
+    public function apiLogin(Request $request)
+    {
+
+    }
 }

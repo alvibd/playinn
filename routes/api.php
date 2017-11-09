@@ -39,6 +39,9 @@ Route::middleware('auth:api')->group(function (){
     Route::post('join/private/lobby/{userId}/{lobbyId}', 'JoiningRequestController@inviteToLobby')->name('api.public.join');
     Route::get('lobby/join/requests/{lobbyId}', 'JoiningRequestController@getJoiningRequests')->name('api.join.request');
     Route::get('invitations/{userId}', 'JoiningRequestController@getInvitations')->name('api.invitations');
+
+    Route::post('/set/location', 'LocationController@setLocation')->name('api.set.location');
+    Route::get('/locations', 'LocationController@getLocations')->name('api.locations');
 });
 
 Route::get('/success', 'ApiController@success')->name('test.success');

@@ -47,4 +47,19 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function created()
+    {
+        return $this->hasMany('App\Lobby', 'lobby_id');
+    }
+
+    public function joiningRequests()
+    {
+        return $this->hasMany('App\Model\JoiningRequest');
+    }
+
+    public function lobbies()
+    {
+        return $this->belongsToMany('App\Lobby');
+    }
 }

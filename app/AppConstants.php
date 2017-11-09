@@ -22,4 +22,9 @@ class AppConstants
         'Intermediate' => 'INTERMEDIATE',
         'Competitive' => 'COMPETITIVE'
     ];
+    const JOINNING_STATUS = [
+        'Invited' => "INVITED",
+        'Requested' => 'REQUESTED',
+        'Joined' => 'JOINED'
+    ];
 }

@@ -27,4 +27,10 @@ class AppConstants
         'Requested' => 'REQUESTED',
         'Joined' => 'JOINED'
     ];
+
+    const GAME = [
+        'Football' => 'FOOTBALL',
+        'Soccer' => 'SOCCER',
+        'BasketBall' => 'BASKETBALL'
+    ];
 }

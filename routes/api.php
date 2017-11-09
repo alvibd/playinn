@@ -32,5 +32,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth:api')->group(function (){
+    Route::get('lobby/{lobby}', 'LobbyController@getLobby')->name('api.lobby');
+    Route::get('lobbies', 'LobbyController@getLobbies')->name('api.lobbies');
+    Route::post('join/public/lobby/{userId}/{lobbyId}', 'JoiningRequestController@joinPublicLobby')->name('api.public.join');
+    Route::post('join/private/lobby/{userId}/{lobbyId}', 'JoiningRequestController@inviteToLobby')->name('api.public.join');
+    Route::get('lobby/join/requests/{lobbyId}', 'JoiningRequestController@getJoiningRequests')->name('api.join.request');
+    Route::get('invitations/{userId}', 'JoiningRequestController@getInvitations')->name('api.invitations');
+});
+
 Route::get('/success', 'ApiController@success')->name('test.success');
 Route::get('/lobbies', 'ApiController@sendJson')->name('test.response');

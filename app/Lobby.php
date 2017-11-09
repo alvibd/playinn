@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lobby extends Model
 {
+    protected $fillable = [
+      'type', 'gender', 'privacy', 'start_time', 'end_time', 'capacity'
+    ];
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function location()
     {
         return $this->belongsTo('App\Location');
